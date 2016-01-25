@@ -18,6 +18,20 @@ Spin up Environment under Vagrant to test.
 vagrant up
 ````
 
+Usage
+-----
+
+````
+username: admin
+password: admin
+````  
+
+#### Vagrant
+http://127.0.0.1:3000
+
+#### Non-Vagrant
+http://iporhostname:3000
+
 Role Variables
 --------------
 

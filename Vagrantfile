@@ -12,6 +12,7 @@ Vagrant.configure(2) do |config|
 
     grafana.vm.network :private_network, ip: "192.168.202.201"
     grafana.vm.network "forwarded_port", guest: 80, host: 8080
+    grafana.vm.network "forwarded_port", guest: 3000, host: 3000
 
     grafana.vm.provider "virtualbox" do |vb|
       vb.memory = "1024"
