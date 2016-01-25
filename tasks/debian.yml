@@ -70,6 +70,8 @@
       dest: '~/.m2/repository/com/vmware/tools/statsfeeder-common/4.1'
     - src: '/opt/statsfeeder/lib/statsfeeder-core-4.1.jar'
       dest: '~/.m2/repository/com/vmware/tools/statsfeeder-core/4.1'
+    - src: '/opt/statsfeeder/lib/vsphere-sdk-4.1.jar'
+      dest: '~/.m2/repository/com/vmware/tools/vsphere-sdk/4.1'
 
 - name: debian | building GraphiteReceiver maven package
   sudo: no
