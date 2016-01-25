@@ -6,37 +6,82 @@ Installs grafana http://grafana.org/
 Requirements
 ------------
 
-None
+Install all Ansible role requirements.
+````
+sudo ansible-galaxy install -r requirements.yml -f
+````
+
+Vagrant
+-------
+Spin up Environment under Vagrant to test.
+````
+vagrant up
+````
 
 Role Variables
 --------------
 
 ````
+---
+# defaults file for ansible-grafana
+grafana_apt_key: 'https://packagecloud.io/gpg.key'
+grafana_apt_repo: 'deb https://packagecloud.io/grafana/stable/debian/ wheezy main'
 graphite_host: localhost
 ````
 
 Dependencies
 ------------
 
+#### GitHub
 ````
+ansible-collectd
+ansible-snmpd
+ansible-timezone
+ansible-grafana
+ansible-graphite
+````
+#### Galaxy
+````
+mrlesmithjr.collectd
 mrlesmithjr.snmpd
 mrlesmithjr.timezone
+mrlesmithjr.grafana
 mrlesmithjr.graphite
 ````
 
 Example Playbook
 ----------------
 
+#### GitHub
+````
 ---
-- hosts: grafana-servers
-  remote_user: remote
-  sudo: yes
+- name: provisions grafana
+  hosts: all
+  become: true
+  vars:
   roles:
-    - mrlesmithjr.collectd
-    - mrlesmithjr.snmpd
-    - mrlesmithjr.timezone
-    - mrlesmithjr.grafana
-    - mrlesmithjr.graphite
+    - role: ansible-collectd
+    - role: ansible-snmpd
+    - role: ansible-timezone
+    - role: ansible-grafana
+    - role: ansible-graphite
+  tasks:
+````
+#### Galaxy
+````
+---
+- name: provisions grafana
+  hosts: all
+  become: true
+  vars:
+  roles:
+    - role: mrlesmithjr.collectd
+    - role: mrlesmithjr.snmpd
+    - role: mrlesmithjr.timezone
+    - role: mrlesmithjr.grafana
+    - role: mrlesmithjr.graphite
+  tasks:
+````
 
 License
 -------
