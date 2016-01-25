@@ -79,18 +79,18 @@
   shell: "mvn package"
   args:
     chdir: "~/GraphiteReceiver"
-    creates: "~/GraphiteReceiver/target/GraphiteReceiver-1.0-SNAPSHOT.jar"
+    creates: "~/GraphiteReceiver/target/statsfeeder-GraphiteReceiver-1.0-IPM-4.0.jar"
 
 - name: debian | copying files to tmp
   sudo: no
   shell: "cp {{ item }} /tmp"
   with_items:
-    - '~/GraphiteReceiver/target/GraphiteReceiver-1.0-SNAPSHOT.jar'
+    - '~/GraphiteReceiver/target/statsfeeder-GraphiteReceiver-1.0-IPM-4.0.jar'
 
 - name: debian | moving files to statsfeeder
   shell: "mv {{ item.src }} {{ item.dest }}"
   with_items:
-    - src: '/tmp/GraphiteReceiver-1.0-SNAPSHOT.jar'
+    - src: '/tmp/statsfeeder-GraphiteReceiver-1.0-IPM-4.0.jar'
       dest: '/opt/statsfeeder/lib'
 
 - name: debian | creating sampleConfig.xml
