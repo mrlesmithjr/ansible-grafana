@@ -39,7 +39,7 @@ Role Variables
 ---
 # defaults file for ansible-grafana
 config_grafana: true
-enable_grafana_plugins: true
+enable_grafana_plugins: false
 enable_grafana_vsphere_support: false
 grafana_analytics:
   check_for_updates: 'true'
