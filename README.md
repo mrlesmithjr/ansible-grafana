@@ -45,8 +45,15 @@ grafana_analytics:
   check_for_updates: 'true'
   reporting_enabled: 'true'
   google_analytics_ua_id: ''
+grafana_anonymous_auth_info:
+  enabled: 'false' # enable anonymous access
+  org_name: 'Main Org.' # specify organization name that should be used for unauthenticated users
+  org_role: 'Viewer' # specify role for unauthenticated users
 grafana_apt_key: 'https://packagecloud.io/gpg.key'
 grafana_apt_repo: 'deb https://packagecloud.io/grafana/stable/debian/ wheezy main'
+grafana_auth_basic: true
+grafana_auth_ldap: false
+grafana_auth_ldap_config_file: '/etc/grafana/ldap.toml'
 grafana_db_info: # Only required if not using sqlite3 as grafana_db_type
   host: '127.0.0.1:3306'
   name: 'grafana'
@@ -54,11 +61,44 @@ grafana_db_info: # Only required if not using sqlite3 as grafana_db_type
   password: 'root'
 grafana_db_type: 'sqlite3' # Either "mysql", "postgres" or "sqlite3"
 grafana_debian_pre_reqs:
-  - 'default-jdk-headless'
   - 'git'
   - 'maven'
   - 'python-pip'
   - 'unzip'
+grafana_github_auth_info: # http://docs.grafana.org/installation/configuration/#auth-github
+  allow_sign_up: 'false'
+  allowed_organizations: ''
+  api_url: 'https://api.github.com/user'
+  auth_url: 'https://github.com/login/oauth/authorize'
+  client_id: 'some_id'
+  client_secret: 'some_secret'
+  enabled: 'false'
+  scopes: 'user:email,read:org'
+  team_ids: ''
+  token_url: 'https://github.com/login/oauth/access_token'
+grafana_google_auth_info: # http://docs.grafana.org/installation/configuration/#auth-google
+  allow_sign_up: 'false'
+  allowed_domains: ''
+  api_url: 'https://www.googleapis.com/oauth2/v1/userinfo'
+  auth_url: 'https://accounts.google.com/o/oauth2/auth'
+  client_id: 'some_client_id'
+  client_secret: 'some_client_secret'
+  enabled: 'false'
+  scopes: 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'
+  token_url: 'https://accounts.google.com/o/oauth2/token'
+grafana_logging_info:
+  level: 'info' # Either "trace", "debug", "info", "warn", "error", "critical", default is "info"
+  mode:
+    - 'console'
+    - 'file'
+    # - 'syslog'
+  syslog_info:
+    address: 'syslog.{{ pri_domain_name }}'
+    enabled: false
+    facility: '' # Syslog facility. user, daemon and local0 through local7 are valid.
+    format: 'text' # log line format, valid options are text, console and json
+    network: 'udp' # udp, tcp or unix
+    tag: ''
 grafana_paths: # Define paths for each grafana source
   data: '/var/lib/grafana'
   logs: '/var/log/grafana'
@@ -99,6 +139,28 @@ grafana_session_info: # Either "memory", "file", "redis", "mysql", "postgres", d
   provider_config: 'sessions' # File based
   # provider_config: 'addr=127.0.0.1:6379,pool_size=100,db=grafana' # Redis based
   session_life_time: '86400' # Session life time, default is 86400
+grafana_smtp_info:
+  cert_file: ''
+  enabled: 'false'
+  from_address: 'admin@grafana.localhost'
+  host: 'localhost:25'
+  key_file: ''
+  password: ''
+  skip_verify: 'false'
+  user: ''
+grafana_snapshots_info:
+  external_enabled: 'true'
+  external_snapshot_name: 'Publish to snapshot.raintank.io'
+  external_snapshot_url: 'https://snapshots-origin.raintank.io'
+grafana_users_info:
+  allow_org_create: 'true' # Allow non admin users to create organizations
+  allow_sign_up: 'true' # disable user signup / registration
+  auto_assign_org_role: 'Viewer' # Default role new users will be automatically assigned (if disabled above is set to true)
+  auto_assign_org: 'true' # Set to true to automatically assign new users to the default organization (id 1)
+  default_theme: 'dark' # Default UI theme ("dark" or "light")
+  login_hint: 'email or username' # Background text for the user field on the login page
+grafana_welcome_emails: false
+pri_domain_name: 'example.org'
 ```
 
 Dependencies
