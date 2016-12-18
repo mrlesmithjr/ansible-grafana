@@ -7,10 +7,10 @@
   when: ansible_os_family == "RedHat"
 
 - include: vsphere_support.yml
-  when: enable_grafana_vsphere_support
+  when: grafana_enable_vsphere_support
 
 - include: config.yml
-  when: config_grafana
+  when: grafana_config
 
 - include: plugins.yml
-  when: enable_grafana_plugins
+  when: grafana_enable_plugins

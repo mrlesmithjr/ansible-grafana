@@ -1,8 +1,11 @@
 ---
 # defaults file for ansible-grafana
+<<<<<<< HEAD
 config_grafana: true
 enable_grafana_plugins: false
 enable_grafana_vsphere_support: false
+=======
+>>>>>>> dev
 grafana_analytics:
   check_for_updates: 'true'
   reporting_enabled: 'true'
@@ -16,6 +19,7 @@ grafana_apt_repo: 'deb https://packagecloud.io/grafana/stable/debian/ wheezy mai
 grafana_auth_basic: true
 grafana_auth_ldap: false
 grafana_auth_ldap_config_file: '/etc/grafana/ldap.toml'
+grafana_config: true
 grafana_db_info: # Only required if not using sqlite3 as grafana_db_type
   host: '127.0.0.1:3306'
   name: 'grafana'
@@ -27,6 +31,8 @@ grafana_debian_pre_reqs:
   - 'maven'
   - 'python-pip'
   - 'unzip'
+grafana_enable_plugins: false
+grafana_enable_vsphere_support: false
 grafana_github_auth_info: # http://docs.grafana.org/installation/configuration/#auth-github
   allow_sign_up: 'false'
   allowed_organizations: ''
