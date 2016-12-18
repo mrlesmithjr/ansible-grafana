@@ -11,6 +11,12 @@ Install all Ansible role requirements.
 sudo ansible-galaxy install -r requirements.yml -f
 ````
 
+Information
+-----------
+
+Example dashboards are included in `dashboards/`. I would love to see some others
+being added via PR's!
+
 Vagrant
 -------
 Spin up Environment under Vagrant to test.
@@ -38,9 +44,9 @@ Role Variables
 ```
 ---
 # defaults file for ansible-grafana
-config_grafana: true
-enable_grafana_plugins: true
-enable_grafana_vsphere_support: false
+grafana_config: true
+grafana_enable_plugins: true
+grafana_enable_vsphere_support: false
 grafana_analytics:
   check_for_updates: 'true'
   reporting_enabled: 'true'
