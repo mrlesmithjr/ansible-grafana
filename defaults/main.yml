@@ -53,6 +53,7 @@ grafana_db_info:
 grafana_db_type: sqlite3
 
 grafana_debian_pre_reqs:
+  - apt-transport-https
   - git
   - gnupg2
   - maven
