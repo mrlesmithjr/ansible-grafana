@@ -1,6 +1,31 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+**Table of Contents** _generated with [DocToc](https://github.com/thlorenz/doctoc)_
+
+- [ansible-grafana](#ansible-grafana)
+  - [Build Status](#build-status)
+  - [Requirements](#requirements)
+  - [Information](#information)
+  - [Vagrant](#vagrant)
+  - [Usage](#usage)
+    - [Vagrant Login](#vagrant-login)
+    - [Non-Vagrant Login](#non-vagrant-login)
+  - [Role Variables](#role-variables)
+  - [Dependencies](#dependencies)
+  - [Example Playbook](#example-playbook)
+  - [License](#license)
+  - [Author Information](#author-information)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # ansible-grafana
 
 An [Ansible](https://www.ansible.com) role to install/configure [Grafana](https://grafana.com/)
+
+## Build Status
+
+[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-grafana.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-grafana)
 
 ## Requirements
 
@@ -73,4 +98,4 @@ Larry Smith Jr.
 
 - [EverythingShouldBeVirtual](http://everythingshouldbevirtual.com)
 - [@mrlesmithjr](https://www.twitter.com/mrlesmithjr)
-- <mailto:mrlesmithjr@gmail.com>
+- [mrlesmithjr@gmail.com](mailto:mrlesmithjr@gmail.com)

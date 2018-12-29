@@ -93,7 +93,7 @@ grafana_logging_info:
     - file
     # - syslog
   syslog_info:
-    address: "syslog.{{ pri_domain_name }}"
+    address: "syslog.{{ grafana_pri_domain_name }}"
     enabled: false
     # Syslog facility. user, daemon and local0 through local7 are valid.
     facility: ""
@@ -110,7 +110,8 @@ grafana_paths:
   plugins: /var/lib/grafana/plugins
 
 # Define any Grafana plugins to manage
-grafana_plugins: []
+grafana_plugins:
+  []
   # - name: grafana-clock-panel
   #   state: present
   # - name: grafana-piechart-panel
@@ -193,4 +194,4 @@ grafana_users_info:
 
 grafana_welcome_emails: false
 
-pri_domain_name: example.org
+grafana_pri_domain_name: example.org

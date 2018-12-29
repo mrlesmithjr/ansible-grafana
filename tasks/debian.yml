@@ -4,6 +4,8 @@
     url: "{{ grafana_apt_key }}"
     state: present
   become: true
+  register: result
+  until: result is successful
 
 - name: debian | adding grafana apt repo
   apt_repository:
@@ -13,16 +15,19 @@
 
 - name: debian | installing pre-req packages
   apt:
-    name: "{{ item }}"
+    name: "{{ grafana_debian_pre_reqs }}"
     state: present
   become: true
-  with_items: '{{ grafana_debian_pre_reqs }}'
+  register: result
+  until: result is successful
 
 - name: debian | Installing Grafana
   apt:
     name: grafana
     state: present
   become: true
+  register: result
+  until: result is successful
 
 - name: debian | ensuring grafana started and enabled on boot
   service:
