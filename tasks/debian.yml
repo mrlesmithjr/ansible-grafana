@@ -1,4 +1,12 @@
 ---
+- name: debian | installing pre-req packages
+  apt:
+    name: "{{ grafana_debian_pre_reqs }}"
+    state: present
+  become: true
+  register: result
+  until: result is successful
+
 - name: debian | adding grafana apt key
   apt_key:
     url: "{{ grafana_apt_key }}"
@@ -12,14 +20,6 @@
     repo: "{{ grafana_apt_repo }}"
     state: present
   become: true
-
-- name: debian | installing pre-req packages
-  apt:
-    name: "{{ grafana_debian_pre_reqs }}"
-    state: present
-  become: true
-  register: result
-  until: result is successful
 
 - name: debian | Installing Grafana
   apt:
