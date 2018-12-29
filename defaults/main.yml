@@ -54,6 +54,7 @@ grafana_db_type: sqlite3
 
 grafana_debian_pre_reqs:
   - git
+  - gnupg2
   - maven
   - python-pip
   - unzip
