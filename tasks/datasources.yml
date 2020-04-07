@@ -10,4 +10,4 @@
     name: "{{ item['name'] }}"
     state: "{{ item['state']|default('present') }}"
     url: "{{ item['url'] }}"
-  with_items: "{{ grafana_datasources }}"
+  loop: "{{ grafana_datasources }}"

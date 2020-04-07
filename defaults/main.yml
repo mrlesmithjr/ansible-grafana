@@ -15,9 +15,7 @@ grafana_anonymous_auth_info:
 
 grafana_api_url: "{{ grafana_server_info['protocol'] }}://{{ grafana_server_info['http_addr'] }}:{{ grafana_server_info['http_port'] }}"
 
-grafana_apt_key: https://packagecloud.io/gpg.key
-
-grafana_apt_repo: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+grafana_apt_repo: "{{ 'deb https://packages.grafana.com/'+grafana_edition+'/deb stable main' }}"
 
 grafana_auth_basic: true
 
@@ -60,6 +58,10 @@ grafana_debian_pre_reqs:
   - python-pip
   - unzip
 
+# Defines the edition of Grafana to install
+# beta|enterprise|oss
+grafana_edition: oss
+
 # http://docs.grafana.org/installation/configuration/#auth-github
 grafana_github_auth_info:
   allow_sign_up: false
@@ -84,6 +86,8 @@ grafana_google_auth_info:
   enabled: false
   scopes: https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email
   token_url: https://accounts.google.com/o/oauth2/token
+
+grafana_gpg_key: https://packages.grafana.com/gpg.key
 
 # Either "trace", "debug", "info", "warn", "error", "critical", default is "info"
 grafana_logging_info:
@@ -194,4 +198,5 @@ grafana_users_info:
 
 grafana_welcome_emails: false
 
+grafana_yum_repo_url: "{{ 'https://packages.grafana.com/'+grafana_edition+'/rpm' }}"
 grafana_pri_domain_name: example.org

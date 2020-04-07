@@ -1,1 +1,21 @@
 ---
+- name: redhat | Adding Grafana Repo
+  yum_repository:
+    name: grafana
+    description: Grafana YUM repo
+    baseurl: https://packages.grafana.com/enterprise/rpm
+    enabled: true
+    gpgcheck: true
+    gpgkey: "{{ grafana_gpg_key }}"
+    sslverify: true
+    sslcacert: /etc/pki/tls/certs/ca-bundle.crt
+    state: present
+  become: true
+
+- name: redhat | Installing Grafana
+  package:
+    name: grafana
+    state: present
+  become: true
+  register: result
+  until: result is successful

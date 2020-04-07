@@ -1,3 +1,15 @@
+commit 312c001089dd0ee6c7951599edcc26d10e276fee
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Tue Apr 7 09:42:39 2020 -0400
+
+    Removed old vSphere support
+
+commit acca3f99f54de29311b702ec24a9042b1fff02c6
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Tue Apr 7 09:35:46 2020 -0400
+
+    Added: New files, etc. from cookiecutter template
+
 commit 507556ef013a5cea0cee7cb13b6bd556f4e3bf4e
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Tue Apr 7 09:35:22 2020 -0400
