@@ -2,8 +2,8 @@
 - name: redhat | Adding Grafana Repo
   yum_repository:
     name: grafana
-    description: Grafana YUM repo
-    baseurl: https://packages.grafana.com/enterprise/rpm
+    description: Grafana {{ grafana_edition }} YUM repo
+    baseurl: "{{ grafana_yum_repo_url }}"
     enabled: true
     gpgcheck: true
     gpgkey: "{{ grafana_gpg_key }}"

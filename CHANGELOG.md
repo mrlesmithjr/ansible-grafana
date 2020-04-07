@@ -1,3 +1,9 @@
+commit fdf5a2798e13e6139007a4d577020f3c2d2944f9
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Tue Apr 7 10:16:09 2020 -0400
+
+    Refactored tasks, etc.
+
 commit 312c001089dd0ee6c7951599edcc26d10e276fee
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Tue Apr 7 09:42:39 2020 -0400
