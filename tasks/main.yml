@@ -1,23 +1,22 @@
 ---
 # tasks file for ansible-grafana
-- include: debian.yml
+- include_tasks: debian.yml
   when: ansible_os_family == "Debian"
 
-- include: redhat.yml
+- include_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- include: vsphere_support.yml
-  when: grafana_enable_vsphere_support
+- include_tasks: service.yml
 
-- include: config.yml
+- include_tasks: config.yml
   when: grafana_config
 
 - include_tasks: datasources.yml
-  when: >
-    grafana_datasources is defined and
-    grafana_datasources != []
+  when:
+    - grafana_datasources is defined
+    - grafana_datasources != []
 
-- include: plugins.yml
-  when: >
-    grafana_plugins is defined and
-    grafana_plugins != []
+- include_tasks: plugins.yml
+  when:
+    - grafana_plugins is defined
+    - grafana_plugins != []

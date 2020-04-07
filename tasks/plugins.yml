@@ -5,4 +5,4 @@
     version: "{{ item['version']|default(omit) }}"
     state: "{{ item['state'] }}"
   become: true
-  with_items: "{{ grafana_plugins }}"
+  loop: "{{ grafana_plugins }}"

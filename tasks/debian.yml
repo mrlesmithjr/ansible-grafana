@@ -9,7 +9,7 @@
 
 - name: debian | adding grafana apt key
   apt_key:
-    url: "{{ grafana_apt_key }}"
+    url: "{{ grafana_gpg_key }}"
     state: present
   become: true
   register: result
@@ -28,10 +28,3 @@
   become: true
   register: result
   until: result is successful
-
-- name: debian | ensuring grafana started and enabled on boot
-  service:
-    name: grafana-server
-    enabled: yes
-    state: started
-  become: true
