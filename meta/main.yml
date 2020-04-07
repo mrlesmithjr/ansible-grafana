@@ -4,7 +4,7 @@ galaxy_info:
   description: An Ansible role to install/configure Grafana
 
   license: MIT
-  min_ansible_version: 1.2
+  min_ansible_version: 2.8
 
   platforms:
     - name: Ubuntu
@@ -18,7 +18,6 @@ galaxy_info:
       versions:
         - jessie
         - stretch
-
   galaxy_tags:
     - monitoring
     - system
