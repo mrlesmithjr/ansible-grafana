@@ -1,3 +1,9 @@
+commit 63f5232318e1050a05d2e1e31848ba83f699c407
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Tue Apr 7 11:20:24 2020 -0400
+
+    Fixed CentOS repo and package install
+
 commit fdf5a2798e13e6139007a4d577020f3c2d2944f9
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Tue Apr 7 10:16:09 2020 -0400
