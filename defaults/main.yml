@@ -143,6 +143,7 @@ grafana_server_info:
   protocol: http
   root_url: "%(protocol)s://%(domain)s:%(http_port)s/"
   router_logging: false
+  serve_from_sub_path: false
   static_root_path: public
 
 # Provider config options

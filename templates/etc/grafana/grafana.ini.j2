@@ -4,15 +4,16 @@ logs = {{ grafana_paths['logs'] }}
 plugins = {{ grafana_paths['plugins'] }}
 
 [server]
-protocol = {{ grafana_server_info['protocol'] }}
+domain = {{ grafana_server_info['domain'] }}
+enable_gzip = {{ grafana_server_info['enable_gzip']|lower }}
+enforce_domain = {{ grafana_server_info['enforce_domain']|lower }}
 http_addr = {{ grafana_server_info['http_addr'] }}
 http_port = {{ grafana_server_info['http_port'] }}
-domain = {{ grafana_server_info['domain'] }}
-enforce_domain = {{ grafana_server_info['enforce_domain']|lower }}
+protocol = {{ grafana_server_info['protocol'] }}
 root_url = {{ grafana_server_info['root_url'] }}
 router_logging = {{ grafana_server_info['router_logging']|lower }}
+serve_from_sub_path = {{ grafana_server_info['serve_from_sub_path']|lower }}
 static_root_path = {{ grafana_server_info['static_root_path'] }}
-enable_gzip = {{ grafana_server_info['enable_gzip']|lower }}
 
 [database]
 type = {{ grafana_db_type }}
