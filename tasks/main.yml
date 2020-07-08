@@ -6,10 +6,10 @@
 - include_tasks: redhat.yml
   when: ansible_os_family == "RedHat"
 
-- include_tasks: service.yml
-
 - include_tasks: config.yml
   when: grafana_config
+
+- include_tasks: service.yml
 
 - include_tasks: datasources.yml
   when:

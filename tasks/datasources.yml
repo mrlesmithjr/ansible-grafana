@@ -1,13 +1,15 @@
 ---
 - name: datasources | Managing Grafana Datasources
-  grafana_datasource:
-    database: "{{ item['database']|default(omit) }}"
-    ds_type: "{{ item['ds_type'] }}"
-    grafana_password: "{{ grafana_security_info['admin_password'] }}"
-    grafana_url: "{{ grafana_api_url }}"
-    grafana_user: "{{ grafana_security_info['admin_user'] }}"
-    is_default: "{{ item['default']|default(omit) }}"
-    name: "{{ item['name'] }}"
-    state: "{{ item['state']|default('present') }}"
-    url: "{{ item['url'] }}"
-  loop: "{{ grafana_datasources }}"
+  copy:
+    content: |
+      apiVersion: 1
+      deleteDatasources: []
+      datasources:
+      {{ grafana_datasources | to_nice_yaml }}
+    dest: /etc/grafana/provisioning/datasources/ansible.yml
+    owner: root
+    group: grafana
+    mode: u=rw,g=r,o=
+  notify:
+    - restart grafana-server
+  become: true

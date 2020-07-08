@@ -5,3 +5,4 @@
     dest: /etc/grafana/grafana.ini
   notify: restart grafana-server
   become: true
+  register: _grafana_configured
