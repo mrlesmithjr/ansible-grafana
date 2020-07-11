@@ -11,6 +11,11 @@
 
 - include_tasks: service.yml
 
+- include_tasks: dashboards.yml
+  when:
+    - grafana_dashboards is defined
+    - grafana_dashboards != []
+
 - include_tasks: datasources.yml
   when:
     - grafana_datasources is defined

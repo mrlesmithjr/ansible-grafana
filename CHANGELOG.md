@@ -1,3 +1,17 @@
+commit 6214bc3e1765b2bdf32f959edaf0f782c7debd09
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Sun Jul 5 11:23:21 2020 -0400
+
+    Added ability to serve from sub_path
+    
+    https://grafana.com/tutorials/run-grafana-behind-a-proxy/#1
+
+commit 1ea9cf4524154bdb85aaa1c2772a2e8fce1f69da
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Tue Apr 7 11:42:20 2020 -0400
+
+    Disabled Fedora testing for now
+
 commit 63f5232318e1050a05d2e1e31848ba83f699c407
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Tue Apr 7 11:20:24 2020 -0400

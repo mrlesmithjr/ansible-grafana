@@ -25,23 +25,31 @@ grafana_auth_ldap_config_file: /etc/grafana/ldap.toml
 
 grafana_config: true
 
+# Define any Grafana dashboards to manage
+grafana_dashboards:
+  []
+  # - dashboard_id: 1860
+  #   revision_id: 20
+  #   datasource: Prometheus
+
 # Define any Grafana datasources to manage
 grafana_datasources:
-  - name: Prometheus
-    type: prometheus
-    access: proxy
-    isDefault: true
-    url: "{{ 'http://'+prometheus_server+':9090' }}"
-# - name: Elasticsearch
-#   type: elasticsearch
-#   url: http://192.168.250.10:9200
-#   database: my-index_*
-#   default: false
-# - name: Influxdb
-#   type: influxdb
-#   url: http://192.168.250.10:8086
-#   database: my-index_*
-#   default: true
+  []
+  # - name: Prometheus
+  #   type: prometheus
+  #   access: proxy
+  #   isDefault: true
+  #   url: "{{ 'http://'+prometheus_server+':9090' }}"
+  # - name: Elasticsearch
+  #   type: elasticsearch
+  #   url: http://192.168.250.10:9200
+  #   database: my-index_*
+  #   default: false
+  # - name: Influxdb
+  #   type: influxdb
+  #   url: http://192.168.250.10:8086
+  #   database: my-index_*
+  #   default: true
 
 # Only required if not using sqlite3 as grafana_db_type
 grafana_db_info:

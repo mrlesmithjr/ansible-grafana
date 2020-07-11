@@ -1,0 +1,32 @@
+---
+- name: dashboards | Ensure Dashboards Directory Exists
+  file:
+    path: "{{ grafana_paths.data+'/dashboards' }}"
+    state: directory
+  become: true
+
+- name: dashboards | Downloading Dashboards
+  get_url:
+    url: "{{ 'https://grafana.com/api/dashboards/'+item.dashboard_id|string+'/revisions/'+item.revision_id|string+'/download' }}"
+    dest: "{{ grafana_paths.data+'/dashboards/' }}"
+  become: true
+  loop: "{{ grafana_dashboards }}"
+
+- name: dashboards | Managing Grafana Dashboards
+  copy:
+    dest: /etc/grafana/provisioning/dashboards/ansible.yml
+    content: |
+      apiVersion: 1
+      providers:
+        - name: default
+          orgId: 1
+          folder: ""
+          type: file
+          options:
+            path: "{{ grafana_paths.data+'/dashboards' }}"
+    owner: root
+    group: grafana
+    mode: u=rw,g=r,o=
+  notify:
+    - restart grafana-server
+  become: true

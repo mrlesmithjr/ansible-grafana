@@ -1,0 +1,4 @@
+---
+roles:
+  - name: mrlesmithjr.prometheus
+  - name: mrlesmithjr.prometheus-node-exporter
