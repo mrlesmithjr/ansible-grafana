@@ -1,7 +1,25 @@
 ---
 - name: Converge
+  vars:
+    grafana_dashboards:
+      - dashboard_id: 1860
+        revision_id: 20
+    grafana_datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        isDefault: true
+        url: http://127.0.0.1:9090
   hosts: all
   tasks:
+    - name: Include mrlesmithjr.prometheus
+      include_role:
+        name: mrlesmithjr.prometheus
+
+    - name: Include mrlesmithjr.prometheus-node-exporter
+      include_role:
+        name: mrlesmithjr.prometheus-node-exporter
+
     - name: Include ansible-grafana
       include_role:
         name: ansible-grafana
