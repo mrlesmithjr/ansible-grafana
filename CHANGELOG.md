@@ -1,3 +1,9 @@
+commit db8558314148a03f4b7e48d58a64d4b0825373f6
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Fri Jul 17 01:43:25 2020 -0400
+
+    Updated Python requirements
+
 commit 51100b9062825f781cec53d0836b51eb6efaff7f
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Fri Jul 17 01:43:14 2020 -0400
