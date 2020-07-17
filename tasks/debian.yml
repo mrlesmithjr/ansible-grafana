@@ -1,4 +1,9 @@
 ---
+- name: debian | Updating Apt Cache
+  apt:
+    update_cache: true
+  become: true
+
 - name: debian | installing pre-req packages
   apt:
     name: "{{ grafana_debian_pre_reqs }}"

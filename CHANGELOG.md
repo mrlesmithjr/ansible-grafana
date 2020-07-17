@@ -1,3 +1,33 @@
+commit db8558314148a03f4b7e48d58a64d4b0825373f6
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Fri Jul 17 01:43:25 2020 -0400
+
+    Updated Python requirements
+
+commit 51100b9062825f781cec53d0836b51eb6efaff7f
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Fri Jul 17 01:43:14 2020 -0400
+
+    Updated CI tests to latest
+
+commit 35cd057eab61747622b3b2775a1755cfc6efdbfe
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Sat Jul 11 18:18:27 2020 -0400
+
+    Added ability to load dashboards
+    
+    This adds the ability to load dashboards during provisioning. The
+    datasources will typically need to be changed.
+
+commit a8231dea9425c97db3694326f48ed8b27c20bcb4
+Author: Larry Smith Jr <mrlesmithjr@gmail.com>
+Date:   Wed Jul 8 09:08:51 2020 -0400
+
+    Fixed issue with pre-loading Datasources
+    
+    When attempting to manage datasources and the password was changed,
+    failures started occuring.
+
 commit 6214bc3e1765b2bdf32f959edaf0f782c7debd09
 Author: Larry Smith Jr <mrlesmithjr@gmail.com>
 Date:   Sun Jul 5 11:23:21 2020 -0400
